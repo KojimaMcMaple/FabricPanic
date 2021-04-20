@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class RushRequestController : MonoBehaviour
 {
     private float currentTime = 0.0f;
     private float maxTime = 30.0f;
+    private float delay = 300.0f;
     [SerializeField]
     private TextMeshProUGUI timerText;
     public enum States //These are our Game States. enums are very useful as you will see in the update function. 
@@ -37,7 +39,7 @@ public class RushRequestController : MonoBehaviour
     public GameObject GamePanel, TitlePanel, TitleText, SubtitlePanel, SubtitleText; // Our main objects. 
     public GameObject BasketPrefab, FabricPrefab; // The Prefabricated Basket type 
     public GameObject[] Baskets; //The array of baskets, I will show you below what to do with this in Start(); 
-    public TextMeshProUGUI EndText;
+    public TextMeshProUGUI EndText, EndNote;
     //*Dont forget to set the size of this array to 4 in the inspector****
     private bool initComplete;
     private float imageAlpha;
@@ -110,6 +112,10 @@ public class RushRequestController : MonoBehaviour
                 GamePanel.SetActive(false);
                 EndText.color = Color.green;
                 EndText.text = "YOU WON";
+                EndNote.enabled = true;
+                // DELAY
+                delay--;
+                if(delay<=0)
                 State = States.EndGame;
                 //I think thats enough you get the picture
                 //PLEASE talk to me if you don't understand or want help, or think you  know a better way
@@ -129,6 +135,7 @@ public class RushRequestController : MonoBehaviour
             case States.EnterEndGame:
                 break;
             case States.EndGame: // end minigame
+                SceneManager.LoadScene("IntroScene");
                 break;
             case States.PauseGame:
                 break;
@@ -182,7 +189,8 @@ public class RushRequestController : MonoBehaviour
         //    initComplete = true;
         //    imageAlpha = 0; //remember to reset values as much as possible. 
         //}
-        
+        EndNote.enabled = false;
+
         initComplete = true;
     }
 }

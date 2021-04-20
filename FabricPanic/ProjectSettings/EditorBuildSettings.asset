@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: 249ab11bf901bf1459c458beb1990399
+  - enabled: 1
+    path: Assets/Scenes/RushRequest.unity
+    guid: 81d72ad18b9472c4c84de4912850dbad
   m_configObjects: {}
