@@ -36,7 +36,7 @@ public class RushRequestController : MonoBehaviour
     //Example: after setting a GameObject Variable to THIS gameobject ("GameManager")
     // if(GameManager.State == GameManager.GetComponent<MiniGameManager>().States.GamePlay {Do Stuff}
 
-    public GameObject GamePanel, TitlePanel, TitleText, SubtitlePanel, SubtitleText; // Our main objects. 
+    public GameObject GamePanel, TitlePanel, TitleText, SubtitlePanel, SubtitleText, LosePanel; // Our main objects. 
     public GameObject BasketPrefab, FabricPrefab; // The Prefabricated Basket type 
     public GameObject[] Baskets; //The array of baskets, I will show you below what to do with this in Start(); 
     public TextMeshProUGUI EndText, EndNote;
@@ -130,7 +130,8 @@ public class RushRequestController : MonoBehaviour
                 GamePanel.SetActive(false);
                 EndText.color = Color.red;
                 EndText.text = "YOU LOST";
-                State = States.EndGame;
+                LosePanel.SetActive(true);
+                //State = States.EndGame;
                 break;
             case States.EnterEndGame:
                 break;
@@ -190,6 +191,7 @@ public class RushRequestController : MonoBehaviour
         //    imageAlpha = 0; //remember to reset values as much as possible. 
         //}
         EndNote.enabled = false;
+        LosePanel.SetActive(false);
 
         initComplete = true;
     }
