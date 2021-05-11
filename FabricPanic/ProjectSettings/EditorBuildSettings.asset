@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/IntroScene.unity
     guid: 60f73fce0b7c64549a8b62c8f9688240
   - enabled: 1
-    path: Assets/Scenes/GameScene.unity
+    path: Assets/Scenes/_bk_GameScene.unity
     guid: 249ab11bf901bf1459c458beb1990399
   - enabled: 1
     path: Assets/Scenes/RushRequest.unity
