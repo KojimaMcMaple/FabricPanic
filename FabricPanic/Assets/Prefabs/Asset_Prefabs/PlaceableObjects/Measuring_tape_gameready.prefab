@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2251087671776062053}
   - component: {fileID: 3492941088646674121}
   - component: {fileID: 1668588396488402913}
+  - component: {fileID: 2680069252845267995}
   m_Layer: 0
   m_Name: Measuring_tape_gameready
   m_TagString: Untagged
@@ -120,3 +121,21 @@ MonoBehaviour:
   object_tag_: 4
   starting_pos: {x: 0, y: 0, z: 0}
   can_be_dragged: 0
+--- !u!114 &2680069252845267995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305545759017044912}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []

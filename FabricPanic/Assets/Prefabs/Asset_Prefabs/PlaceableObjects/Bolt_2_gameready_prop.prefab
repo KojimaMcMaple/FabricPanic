@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4935209802416098992}
   - component: {fileID: 396779179480840809}
   - component: {fileID: 1898930103611032738}
+  - component: {fileID: 2973414207573794162}
   m_Layer: 0
   m_Name: Bolt_2_gameready_prop
   m_TagString: Untagged
@@ -120,3 +121,21 @@ MonoBehaviour:
   object_tag_: 0
   starting_pos: {x: 0, y: 0, z: 0}
   can_be_dragged: 0
+--- !u!114 &2973414207573794162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6880831018541395813}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []

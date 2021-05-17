@@ -13,6 +13,12 @@ public class KH_FurnitureController : MonoBehaviour
     private FPTags.FurnitureTag furniture_tag_;
     private List<FPTags.ObjectTag> object_list_ = new List<FPTags.ObjectTag>();
     private int furniture_score_;
+    private int num_placeable_slots_ = 0;
+
+    private void Awake()
+    {
+        num_placeable_slots_ = transform.GetChild(0).childCount;
+    }
 
     public FPTags.FurnitureTag GetTag()
     {
@@ -52,4 +58,11 @@ public class KH_FurnitureController : MonoBehaviour
     {
         return furniture_score_;
     }
+    
+    public int GetNumPlaceableSlots()
+    {
+        return num_placeable_slots_;
+    }
+
+
 }

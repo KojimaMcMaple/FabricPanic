@@ -4,12 +4,25 @@ using UnityEngine;
 
 public class ScoreManager:MonoBehaviour
 {
-    private int game_score = 0;
+    private int game_score_ = 0;
     private GameObject[] furniture_obj_list_;
+    private int total_num_placeable_slots_ = 0;
+    [SerializeField]
+    private float game_end_placement_percentage_ = 80.0f;
+    private int game_end_placement_value_ = 100;
 
     private void Awake()
     {
         furniture_obj_list_ = GameObject.FindGameObjectsWithTag("Furniture");
+    }
+
+    private void Start()
+    {
+        foreach (GameObject furni in furniture_obj_list_)
+        {
+            total_num_placeable_slots_ += furni.GetComponent<KH_FurnitureController>().GetNumPlaceableSlots();
+        }
+        game_end_placement_value_ = (int)(total_num_placeable_slots_ * game_end_placement_percentage_ / 100.0f);
     }
 
     private void Update()
@@ -23,16 +36,16 @@ public class ScoreManager:MonoBehaviour
             }
         }
 
-        game_score = temp_score;
+        game_score_ = temp_score;
     }
 
     public int GetGameScore()
     {
-        return game_score;
+        return game_score_;
     }
 
     public void IncrementGameScore(int value)
     {
-        game_score += value;
+        game_score_ += value;
     }
 }
